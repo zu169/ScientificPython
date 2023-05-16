@@ -1,0 +1,15 @@
+How does your result relate to the confidence level you asked for?
+
+In statistical hypothesis testing, a confidence level represents the level of confidence or certainty we have in the result. 
+It indicates the probability that the true population parameter (in this case, the population mean) falls within the calculated confidence interval.
+So, when you calculate the confidence interval multiple times (as instructed in step f), you are essentially conducting repeated sampling and interval estimation. 
+The question is asking you to analyze the relationship between the percentage of times the confidence interval captures the population mean 
+and the confidence level you initially selected (in this case, a confidence level of 95%).
+If your result shows that a high percentage of the intervals (close to 95 out of 100 intervals) capture the population mean, it suggests that the confidence level you chose is appropriate. 
+It means that 95% of the time, when you use this method to estimate the population mean, the interval you construct will contain the true population mean.
+However, if your result shows that a lower percentage of the intervals capture the population mean (e.g., significantly less than 95 out of 100 intervals), 
+it implies that the confidence level you selected may be too high. 
+In this case, the intervals are wider, resulting in a greater chance of capturing the population mean. 
+You may need to adjust the confidence level to achieve a better balance between precision and certainty.
+In summary, the question asks you to evaluate whether your experimental result aligns with the confidence level you initially specified 
+and to consider whether adjustments to the confidence level may be necessary based on the observed percentage of intervals capturing the population mean.
