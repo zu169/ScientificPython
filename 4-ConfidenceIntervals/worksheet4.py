@@ -47,8 +47,34 @@ def question1():
     for _ in range(0,100):
         num_captures += population_mean_test(population, population_mean)
     
-    print("The confidence interval captures the population mean ", num_captures, "/100 times.")
+    print("The confidence interval captures the population mean ", num_captures, "/100 times.\n")
     
     #How does your result relate to the confidence level you asked for? (refer to txt file)
+    
+def simulate_dice_throw():
+    dice = np.random.randint(1, 7, size=6)
+    num_sixes = np.count_nonzero(dice == 6)
+    
+    return num_sixes
 
+def question2():
+    print("Question 2: \n")
+    num_experiments = 1000
+    count = 0
+    
+    for _ in range(num_experiments):
+        num_sizes = simulate_dice_throw()
+        if num_sizes >= 3:
+            count += 1
+            
+    percentage = count / num_experiments * 100
+    probability = count / num_experiments
+    print("Chances of rolling 3 or more sizes:")
+    print("Percentage: ", percentage)
+    print("Probabilty: ", probability)
+    
+    ideal_probability = 1 - stats.binom.cdf(2,6,1/6)
+    print("Ideal probability: ", ideal_probability)
+    
 question1()
+question2()
