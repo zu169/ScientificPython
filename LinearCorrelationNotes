@@ -1,0 +1,45 @@
+Step 1: Import necessary modules
+
+python
+Copy code
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from scipy.stats import pearsonr
+Step 2: Read the data into a pandas DataFrame
+
+python
+Copy code
+data = pd.read_csv('AvgTemp.csv')
+Make sure that the 'AvgTemp.csv' file is in the same directory as your Python script or notebook.
+
+Step 3: Prepare the data for modeling
+
+python
+Copy code
+X = data['Year'].values.reshape(-1, 1)
+y = data['AvgTemp'].values
+Step 4: Fit a linear model
+
+python
+Copy code
+model = LinearRegression()
+model.fit(X, y)
+Step 5: Print slope, intercept, and Pearson correlation coefficient
+
+python
+Copy code
+slope = model.coef_[0]
+intercept = model.intercept_
+corr_coef = pearsonr(data['Year'], data['AvgTemp'])[0]
+
+print("Slope:", slope)
+print("Intercept:", intercept)
+print("Pearson correlation coefficient:", corr_coef)
+The slope represents the change in average temperature per year, the intercept is the predicted average temperature at year zero, and the Pearson correlation coefficient indicates the strength and direction of the linear relationship between the year and average temperature.
+
+To determine whether the model fits the data well, you can consider the following:
+
+If the slope is non-zero, it suggests a linear relationship between the year and average temperature.
+If the intercept is significantly different from zero, it indicates a non-zero average temperature at year zero.
+If the Pearson correlation coefficient is close to 1 or -1, it suggests a strong linear relationship, while values closer to 0 indicate a weaker correlation.
+You can analyze these values and consider the context of the data to evaluate how well the model fits.
